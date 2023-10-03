@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lipid Metabolism Flashcards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        h2 {
+            margin-top: 20px;
+        }
+
+        .cards-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card {
+            width: 320px;
+            height: 180px;
+            position: relative;
+            perspective: 1000px;
+            margin: 20px;
+            cursor: pointer;
+        }
+
+        .card-side {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .front {
+            transform: rotateY(0deg);
+            background-color: #0d69bf;
+            color: white;
+        }
+
+        .back {
+            transform: rotateY(180deg);
+            background-color: #68aded;
+            color: white;
+        }
+
+        .card.flipped .front {
+            transform: rotateY(180deg);
+        }
+
+        .card.flipped .back {
+            transform: rotateY(360deg);
+        }
+
+        .title {
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .content {
+            text-align: center;
+            max-width: 90%;
+        }
+
+        .index-button {
+            display: inline-block;
+            background-color: #0d69bf;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-bottom: 20px;
+            transition: background-color 0.3s;
+        }
+        
+        .index-button:hover {
+            background-color: #68aded;
+        }
+        
+        .button-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        
+        
+    </style>
+</head>
+<body>
+
+<h2>Lipid Metabolism</h2>
+
+<div class="button-container">
+    <a href="index.html" class="index-button">Go to Main Page</a>
+</div>
+
+
+<div class="cards-wrapper" id="cardsContainer">
+    <!-- Cards will be generated here using JavaScript -->
+</div>
+
+<script>
+    const cardsData = {
+        "What roles do lipids play in the human body?": "Energy storage, cell membrane structure, hormone production, and absorption of fat-soluble vitamins.",
+        "What is the common characteristic of lipids?": "Their hydrophobic nature.",
+        "What are the basic units of lipids?": "Fatty acids.",
+        "What do fatty acids consist of?": "A hydrocarbon chain and a carboxyl group.",
+        "What is the composition of triglycerides?": "Three fatty acids attached to a glycerol molecule.",
+        "Where does the digestion of lipids begin?": "In the mouth.",
+        "What emulsifies dietary fats in the small intestine?": "Bile salts.",
+        "What breaks down triglycerides into fatty acids and monoglycerides?": "Pancreatic lipase.",
+        "How are fatty acids and monoglycerides transported after digestion?": "Reassembled into triglycerides, packaged into chylomicrons, and transported through the lymphatic system.",
+        "What is the primary energy storage form in the body?": "Triglycerides.",
+        "What roles do triglycerides play in the body?": "Energy storage, insulation, protection, and contributing to cell membrane structure and function.",
+        "What are the health effects of saturated fats?": "Increased risk of cardiovascular disease and raising LDL cholesterol levels.",
+        "What are the benefits of unsaturated fats?": "Lower LDL cholesterol and reduce the risk of heart disease.",
+        "What are trans fats?": "Artificial fats created through hydrogenation that can elevate LDL cholesterol and lower HDL cholesterol.",
+        "How do cis fatty acids differ from trans fatty acids in terms of hydrogen atom placement?": "In cis fatty acids, hydrogen atoms are on the same side of the carbon chain."
+    };
+ 
+    const cardsContainer = document.getElementById('cardsContainer');
+
+    for (const [question, answer] of Object.entries(cardsData)) {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.onclick = () => flipCard(card);
+
+        const front = document.createElement('div');
+        front.className = 'card-side front';
+        front.innerHTML = `<div class='title'>Question</div><div class='content'>${question}</div>`;
+
+        const back = document.createElement('div');
+        back.className = 'card-side back';
+        back.innerHTML = `<div class='title'>Answer</div><div class='content'>${answer}</div>`;
+
+        card.appendChild(front);
+        card.appendChild(back);
+        cardsContainer.appendChild(card);
+    }
+
+    function flipCard(card) {
+        if(card.classList.contains('flipped')) {
+            card.classList.remove('flipped');
+        } else {
+            card.classList.add('flipped');
+        }
+    }
+</script>
+
+</body>
+</html>

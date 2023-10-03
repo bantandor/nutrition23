@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition Flashcards</title>
+    <style>
+        /* Base styling for the buttons */
+        .flashcard-button {
+            display: inline-block;
+            width: 300px;
+            height: 150px;
+            margin: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            line-height: 150px; /* Vertically center the text */
+        }
+
+        /* Individual button colors */
+        .lipids {
+            background-color: #0d69bf;
+            color: #fff;
+        }
+
+        .proteins {
+            background-color: #d4a706;
+            color: #fff;
+        }
+
+        .energy {
+            background-color: #ba4bc4;
+            color: #fff;
+        }
+
+        .metabolism {
+            background-color: #e33f30;
+            color: #fff;
+        }
+
+        /* Hover effects for buttons */
+        .flashcard-button:hover {
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+        /* Centering the container */
+        .flashcard-container {
+            text-align: center;
+            margin-top: 10%;
+        }
+        h2 {
+            margin-top: 20px;
+            text-align: center;
+        }
+        #message {
+            width: 800px;
+            font-size: 16px;
+            margin-bottom: 60px;
+            margin-top: 20px;
+            display: block;
+            margin: 0 auto;
+        }  
+    </style>
+</head>
+<body>
+    <h2>Nutrition EXSC225 Flashcards</h2>
+
+    <div id="message">
+        Welcome Exercise Science students of SMSU! This interactive app is specially designed for you to help you enhance your knowledge and 
+        skills in the field. It can also be beneficial for students from other institutions. I hope you find it useful and enjoyable as you 
+        learn and grow in your field of study. Happy practicing! Dr.Taner
+    </div>
+<div class="flashcard-container">
+    <!-- Flashcard Buttons -->
+    <a href="lipids.html" class="flashcard-button lipids">Lipids</a>
+    <a href="proteins.html" class="flashcard-button proteins">Proteins</a><br>
+    <a href="energy.html" class="flashcard-button energy">Energy</a>
+    <a href="metabolism.html" class="flashcard-button metabolism">Metabolism</a>
+</div>
+
+</body>
+</html>
